@@ -63,6 +63,8 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 <img width="1210" height="747" alt="image" src="https://github.com/user-attachments/assets/0d4494fd-18d4-4ccf-9561-42c61e623393" />
 
 ### Email Notification System
+<img width="1776" height="733" alt="image" src="https://github.com/user-attachments/assets/1056b7f8-053b-4b9f-9db2-3085e15b6ed6" />
+
 
 #### Payment Reminder Notification
 <img width="458" alt="Daily Reminder Email" src="https://github.com/user-attachments/assets/47138835-9e47-45ff-8739-f784c3d6906e" />
