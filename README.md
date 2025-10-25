@@ -40,63 +40,235 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 <img width="1026" height="919" alt="image" src="https://github.com/user-attachments/assets/04d4df89-2a5d-4db8-ac11-cb2bd8feabc4" />
 
 
-
-🔑 Key Technical Decisions
-1. Real-time Data with Convex
-Why? Instant updates across all devices without manual refresh
-How? Convex provides reactive queries that update automatically
-2. Optimized Balance Calculations
-Implemented 4-step consistent calculation logic:
-
-Get all expenses where user is involved
-Calculate net balance per user from expenses
-Apply all settlements to adjust net balances
-Build UI lists and calculate global totals
-3. Smart Indexing
-Indexes on frequently queried fields
-Reduces query time from O(n) to O(log n)
-Critical for dashboard performance
-4. Background Jobs with Inngest
-Payment Reminders: Daily at 10 AM IST
-Spending Insights: Monthly on 1st at 10 AM IST
-Runs reliably without blocking main application
-📧 Email Notifications
-Gmail SMTP Setup
-Enable 2-Step Verification
-
-Go to Google Account Security
-Enable 2-Step Verification
-Generate App Password
-
-Go to App Passwords
-Create password for "Mail"
-Use this as GMAIL_APP_PASSWORD
-Configure in Convex
-
-Add GMAIL_USER and GMAIL_APP_PASSWORD to Convex environment variables
-🎓 Learning Outcomes
-This project demonstrates:
-
-✅ Full-stack development with modern React (Next.js 16)
-✅ Real-time backend architecture (Convex)
-✅ Authentication implementation (Clerk)
-✅ Background job scheduling (Inngest)
-✅ Email automation (Nodemailer)
-✅ Database design and indexing
-✅ Responsive UI design (Tailwind CSS + shadcn/ui)
-✅ Form validation (React Hook Form + Zod)
-✅ Error handling and user feedback
-✅ Deployment and production setup
-🙏 Acknowledgments
-Next.js - The React Framework
-Convex - Real-time backend platform
-Clerk - Authentication service
-Inngest - Background job orchestration
-shadcn/ui - Beautiful component library
-Radix UI - Accessible component primitives
-Tailwind CSS - Utility-first CSS framework
+## 📸 Application Screenshots
 
 
+
+### Homepage Interface
+<img width="1354" alt="Homepage View 1" src="https://github.com/user-attachments/assets/23ad0b35-8382-4fd7-b6bb-4eedbb4895c6" />
+<img width="1353" alt="Homepage View 2" src="https://github.com/user-attachments/assets/e87fd46b-cf13-4710-a0bf-6ee25de488f2" />
+<img width="1365" alt="Homepage View 3" src="https://github.com/user-attachments/assets/f9604b4b-712d-453c-ab74-abb3e3ba289a" />
+
+### Main Dashboard
+<img width="1364" alt="Dashboard Interface 1" src="https://github.com/user-attachments/assets/85c57389-042f-493b-a443-db44bba39220" />
+<img width="1359" alt="Dashboard Interface 2" src="https://github.com/user-attachments/assets/f66252fb-8f63-433b-b14a-1c4dfcffb322" />
+
+### Create Expense
+<img width="1361" alt="Expense Creation 1" src="https://github.com/user-attachments/assets/31f35df5-345c-439a-95a4-8b82fb04aaf6" />
+<img width="1360" alt="Expense Creation 2" src="https://github.com/user-attachments/assets/0c25344f-ead5-44ca-8a90-c0bacb768f6f" />
+
+### Group Administration
+<img width="1365" alt="Group Admin Panel 1" src="https://github.com/user-attachments/assets/41ffb2a3-e755-4895-8170-764e521ecc52" />
+<img width="1359" alt="Group Admin Panel 2" src="https://github.com/user-attachments/assets/d72bd991-532e-40cc-9b4d-0efed2e4d1ad" />
+
+### Payment Settlement
+<img width="1360" alt="Settlement Interface" src="https://github.com/user-attachments/assets/d7ddc3ba-d9ef-4baf-81bb-c07a6d165a71" />
+
+### Email Notification System
+
+#### Payment Reminder Notification
+<img width="458" alt="Daily Reminder Email" src="https://github.com/user-attachments/assets/47138835-9e47-45ff-8739-f784c3d6906e" />
+
+#### Monthly Analytics Report
+<img width="1363" alt="Spending Analysis Email" src="https://github.com/user-attachments/assets/9188d651-b8e7-4904-a34a-437b71be9204" />
+
+#### Group Membership Invitation
+<img width="1365" alt="Invitation Email" src="https://github.com/user-attachments/assets/fcd6f107-937b-4ff8-97df-037db41d8da6" />
+
+### Backend Administration Panels
+
+#### Convex Control Panel
+<img width="1366" alt="Convex Admin 1" src="https://github.com/user-attachments/assets/18c5b3f6-2ccb-4564-ac3f-e432c4d27d91" />
+<img width="1363" alt="Convex Admin 2" src="https://github.com/user-attachments/assets/ba0774fe-b044-413a-a988-34d29c291e55" />
+<img width="1361" alt="Convex Admin 3" src="https://github.com/user-attachments/assets/00e6d06b-6901-4f6e-9bf7-ebec011369e2" />
+
+#### Inngest Job Monitor
+<img width="1361" alt="Inngest Control Panel" src="https://github.com/user-attachments/assets/7d1c6f73-74bd-4c87-9814-2093ff02b391" />
+
+
+
+---
+
+## 🚀 Installation & Setup Guide
+
+### Required Dependencies
+- Node.js version 18 or higher with npm package manager
+- Active Convex account (sign up at [convex.dev](https://www.convex.dev/))
+- Active Clerk account (register at [clerk.com](https://clerk.com/))
+- Gmail account for email service integration
+
+### Setup Instructions
+
+**1. Repository Setup**
+```bash
+git clone https://github.com/yourusername/pikofy.git
+cd pikofy
+```
+
+**2. Package Installation**
+```bash
+npm install
+```
+
+**3. Initialize Convex Backend**
+```bash
+npx convex dev
+```
+*Note: This command automatically generates `.env.local` containing `CONVEX_DEPLOYMENT` and `NEXT_PUBLIC_CONVEX_URL`*
+
+**4. Environment Configuration**
+
+Create a `.env.local` file in your project root:
+
+```env
+# Convex Backend Configuration
+CONVEX_DEPLOYMENT=your-deployment-name
+NEXT_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
+
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+# Inngest Configuration (Optional)
+INNGEST_EVENT_KEY=your-event-key
+INNGEST_SIGNING_KEY=your-signing-key
+```
+
+**5. Configure Convex Backend Variables**
+
+Navigate to **Convex Dashboard → Production → Environment Variables** and add:
+
+```env
+GMAIL_USER=your-email@gmail.com
+GMAIL_APP_PASSWORD=your-app-password
+CLERK_JWT_ISSUER_DOMAIN=your-clerk-domain.clerk.accounts.dev
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+**6. Launch Development Environment**
+
+Open two terminal windows:
+
+```bash
+# Terminal Window 1: Start Convex
+npx convex dev
+
+# Terminal Window 2: Start Next.js
+npm run dev
+```
+
+**7. Access the Application**
+- Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+- Create an account and begin using Pikofy!
+
+---
+
+## 🌐 Production Deployment
+
+### Vercel Deployment Process
+
+**Step 1: Initialize Git Repository**
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/yourusername/pikofy.git
+git push -u origin main
+```
+
+**Step 2: Vercel Deployment**
+- Visit [vercel.com](https://vercel.com/) and sign in
+- Select "Import Project" and connect your GitHub repository
+- **Build Configuration:** `npx convex deploy && next build`
+- Import all environment variables from your `.env.local` file
+- Initiate deployment by clicking **Deploy**
+
+**Step 3: Post-Deployment Configuration**
+- In Convex Dashboard, update `NEXT_PUBLIC_APP_URL` with your production Vercel URL
+- Add your production domain to Clerk's **Allowed Origins** list
+- (Optional) Configure Inngest: Either use Vercel's native integration or set up manual synchronization
+
+---
+
+### 1. Convex Real-Time Database Integration
+**Rationale:** Eliminates the need for manual page refreshes by providing live data synchronization
+
+**Implementation:** Leverages Convex's reactive query system that automatically pushes updates to all connected clients in real-time
+
+### 2. Balance Computation Strategy
+Developed a comprehensive 4-phase balance calculation approach:
+- **Phase 1:** Aggregate all transactions involving the current user
+- **Phase 2:** Compute individual user balances from transaction data
+- **Phase 3:** Factor in all payment settlements to update balances
+- **Phase 4:** Generate display-ready lists and calculate aggregate totals
+
+### 3. Database Query Optimization
+- Strategic indexing on high-frequency query fields
+- Performance improvement: O(n) → O(log n) time complexity
+- Essential for maintaining responsive dashboard interactions
+
+### 4. Scheduled Task Management via Inngest
+- **Daily Notifications:** Payment alerts dispatched at 10:00 AM IST
+- **Monthly Reports:** Comprehensive spending analysis sent on the 1st at 10:00 AM IST
+- Asynchronous execution prevents blocking the main application thread
+
+---
+
+## 📧 Email Configuration Guide
+
+### Setting Up Gmail SMTP
+
+**Step 1: Activate Two-Factor Authentication**
+- Navigate to [Google Account Security Settings](https://myaccount.google.com/security)
+- Turn on 2-Step Verification
+
+**Step 2: Create Application Password**
+- Access [App Password Generator](https://myaccount.google.com/apppasswords)
+- Generate a new password for "Mail" application
+- Save this credential as `GMAIL_APP_PASSWORD`
+
+**Step 3: Convex Configuration**
+- Add `GMAIL_USER` and `GMAIL_APP_PASSWORD` to your Convex environment variables
+
+---
+
+## 🎓 Skills & Technologies Demonstrated
+
+This application showcases proficiency in:
+
+✅ Modern full-stack development using Next.js 16 and React 19
+
+✅ Real-time data synchronization with Convex backend
+
+✅ User authentication and authorization via Clerk
+
+✅ Automated task scheduling using Inngest framework
+
+✅ SMTP email integration with Nodemailer
+
+✅ Advanced database architecture and performance optimization
+
+✅ Modern UI development with Tailwind CSS and shadcn/ui components
+
+✅ Client-side validation using React Hook Form and Zod schemas
+
+✅ Comprehensive error handling and user experience design
+
+✅ Production deployment and environment configuration
+
+---
+
+## 🙏 Technology Credits
+
+- **Next.js** - Production-ready React framework
+- **Convex** - Serverless real-time backend solution
+- **Clerk** - Modern authentication platform
+- **Inngest** - Reliable background job scheduler
+- **shadcn/ui** - Premium UI component collection
+- **Radix UI** - Headless accessible UI primitives
+- **Tailwind CSS** - Utility-first styling framework
 
 
 
