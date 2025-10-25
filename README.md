@@ -1,36 +1,180 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🚀 Pikofy - Smart Expense Splitting Platform
+<div align="center">
+Show Image
 
-## Getting Started
+The smartest way to split expenses with friends
 
-First, run the development server:
+Show Image
+Show Image
+Show Image
+Show Image
 
-```bash
+Demo • Features • Getting Started • Tech Stack
+
+</div>
+✨ Features
+💳 Expense Management
+Create individual or group expenses with smart categorization
+Flexible splitting methods: equal, percentage, or exact amounts
+Auto-suggest categories based on description
+Support for 20+ expense categories
+👥 Group Collaboration
+Create unlimited expense groups
+Role-based access (admin/member)
+Real-time activity logs
+Bulk member management with email notifications
+📊 Smart Analytics
+Visual spending insights with interactive charts
+Monthly spending trends
+Category-wise breakdowns
+AI-powered spending insights (via Gemini)
+⚖️ Intelligent Settlements
+Net balance calculations across all expenses
+Direction-aware settlement validation
+Automatic orphan cleanup
+Group and 1-on-1 settlement support
+🔔 Smart Notifications
+Payment reminder emails (daily cron)
+Monthly spending insights with AI analysis
+Group activity notifications
+Member addition alerts
+🛠️ Tech Stack
+<table> <tr> <td align="center" width="96"> <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" /> <br>Next.js 16 </td> <td align="center" width="96"> <img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" /> <br>React 19 </td> <td align="center" width="96"> <img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind" /> <br>Tailwind 4 </td> <td align="center" width="96"> <img src="https://skillicons.dev/icons?i=typescript" width="48" height="48" alt="TypeScript" /> <br>TypeScript </td> </tr> <tr> <td align="center" width="96"> <img src="https://convex.dev/favicon.ico" width="48" height="48" alt="Convex" /> <br>Convex </td> <td align="center" width="96"> <img src="https://clerk.com/favicon.ico" width="48" height="48" alt="Clerk" /> <br>Clerk Auth </td> <td align="center" width="96"> <img src="https://skillicons.dev/icons?i=nodejs" width="48" height="48" alt="Node.js" /> <br>Inngest </td> <td align="center" width="96"> <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" width="48" height="48" alt="Gemini" /> <br>Gemini AI </td> </tr> </table>
+Core Technologies
+Frontend: Next.js 16 (App Router), React 19, Tailwind CSS 4
+Backend: Convex (serverless backend with real-time sync)
+Authentication: Clerk (OAuth & email/password)
+Database: Convex (real-time, reactive queries)
+Cron Jobs: Inngest (scheduled tasks & workflows)
+AI: Google Gemini (spending insights)
+Email: Nodemailer (SMTP notifications)
+UI Components: Radix UI, shadcn/ui
+Charts: Recharts
+Forms: React Hook Form + Zod validation
+🚀 Getting Started
+Prerequisites
+Node.js 18+ and npm/yarn/pnpm
+Convex account (convex.dev)
+Clerk account (clerk.com)
+Gmail account (for SMTP)
+Google AI API key (ai.google.dev)
+Installation
+Clone the repository
+bash
+git clone https://github.com/yourusername/pikofy.git
+cd pikofy
+Install dependencies
+bash
+npm install
+Set up environment variables
+Create .env.local:
+
+env
+# Convex
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+CONVEX_DEPLOYMENT=your_deployment
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+CLERK_SECRET_KEY=your_clerk_secret
+CLERK_JWT_ISSUER_DOMAIN=your_clerk_domain
+
+# Email (Gmail SMTP)
+GMAIL_USER=your_email@gmail.com
+GMAIL_APP_PASSWORD=your_app_password
+
+# AI
+GEMINI_API_KEY=your_gemini_key
+
+# Inngest
+INNGEST_EVENT_KEY=your_inngest_key
+
+# App
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+Set up Convex
+bash
+npx convex dev
+Run the development server
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) 🎉
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
+```
+pikofy/
+├── app/
+│   ├── (auth)/              # Authentication pages
+│   ├── (main)/              # Protected app pages
+│   │   ├── dashboard/       # Main dashboard
+│   │   ├── expenses/        # Expense management
+│   │   ├── contacts/        # Users & groups
+│   │   ├── groups/          # Group details
+│   │   └── settlements/     # Payment settlements
+│   └── api/                 # API routes (Inngest)
+├── components/
+│   ├── ui/                  # Reusable UI components
+│   └── [feature].jsx        # Feature-specific components
+├── convex/
+│   ├── schema.js            # Database schema
+│   ├── users.js             # User queries/mutations
+│   ├── expenses.js          # Expense logic
+│   ├── groups.js            # Group management
+│   ├── settlements.js       # Settlement logic
+│   └── inngest.js           # Cron job queries
+├── lib/
+│   ├── inngest/             # Inngest functions
+│   ├── expense-categories.js
+│   └── utils.js
+└── hooks/
+    └── use-convex-query.jsx # Custom Convex hooks
+🎯 Key Features Explained
+Smart Balance Calculation
+Uses a unified ledger system that:
 
-## Learn More
+Aggregates all expenses (1-on-1 + group)
+Applies settlements to reduce balances
+Prevents incorrect settlement directions
+Handles floating-point precision issues
+AI-Powered Insights
+Monthly emails with:
 
-To learn more about Next.js, take a look at the following resources:
+Spending analysis by category
+Personalized saving tips
+Top spending alerts
+Budget recommendations
+Real-time Sync
+Instant updates across all devices
+Optimistic UI updates
+Conflict-free collaborative editing
+Sub-100ms query latency
+📸 Screenshots
+<div align="center"> <img src="public/hero.png" alt="Dashboard" width="800" /> <p><i>Beautiful, intuitive dashboard</i></p> </div>
+🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fork the project
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🙏 Acknowledgments
+Next.js - React framework
+Convex - Backend platform
+Clerk - Authentication
+shadcn/ui - UI components
+Inngest - Background jobs
+Google Gemini - AI insights
+<div align="center">
+Built with ❤️ by the Pikofy Team
 
-## Deploy on Vercel
+Website • Documentation • Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+</div>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
