@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useAuth } from "@clerk/nextjs"; // ADDED THIS
+import { useAuth } from "@clerk/nextjs";
 import { api } from "@/convex/_generated/api";
 import { useConvexQuery, useConvexMutation } from "@/hooks/use-convex-query";
+import { useStoreUser } from "@/hooks/use-store-user";
 import { BarLoader } from "react-spinners";
 import {
   Card,
@@ -25,7 +26,8 @@ import { formatCurrency } from "@/lib/currency";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
-  const { isLoaded, isSignedIn } = useAuth(); // ADDED THIS LINE
+  const { isLoaded, isSignedIn } = useAuth();
+  const { isLoading: isStoringUser, isAuthenticated } = useStoreUser();
   
   // Show success message based on URL parameter
   useEffect(() => {
@@ -66,21 +68,21 @@ export default function Dashboard() {
     }
   }, [searchParams]);
 
-  // ADDED THIS CHECK - Wait for Clerk to load before making Convex queries
-  if (!isLoaded) {
+  // UPDATED CHECK - Wait for both Clerk AND user storage
+  if (!isLoaded || isStoringUser) {
     return (
       <div className="container mx-auto py-12">
         <div className="flex items-center justify-center min-h-[400px]">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-            <p className="mt-4 text-muted-foreground">Loading...</p>
+            <p className="mt-4 text-muted-foreground">Setting up your account...</p>
           </div>
         </div>
       </div>
     );
   }
 
-  if (!isSignedIn) {
+  if (!isSignedIn || !isAuthenticated) {
     return (
       <div className="container mx-auto py-12">
         <div className="text-center">
@@ -90,7 +92,7 @@ export default function Dashboard() {
     );
   }
 
-  // NOW it's safe to call Convex queries
+  // NOW it's safe - user is authenticated AND stored in database
   return <DashboardContent />;
 }
 
