@@ -32,12 +32,8 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 * **Automation & AI:** **Inngest** runs reliable **cron jobs** (reminders); **Google Gemini** powers AI insights.
 * **Email:** **Nodemailer** sends all notifications.
 
-<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/2801d697-3ab7-4b01-97cc-01696fed2c58" />
-<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/39e84f93-a73e-48db-b0f5-d392b7791d3b" />
-<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/9337bf01-ee98-4d4b-99bb-c7a10668b944" />
-<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/381feeae-7e86-46f3-9857-3e6926e44503" />
-<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/d02c5c74-5955-48e5-8753-f8d45911307c" />
-<img width="1026" height="919" alt="image" src="https://github.com/user-attachments/assets/04d4df89-2a5d-4db8-ac11-cb2bd8feabc4" />
+
+
 
 
 ## 📸 Application Screenshots
@@ -45,24 +41,26 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 
 
 ### Homepage Interface
-<img width="1354" alt="Homepage View 1" src="https://github.com/user-attachments/assets/23ad0b35-8382-4fd7-b6bb-4eedbb4895c6" />
-<img width="1353" alt="Homepage View 2" src="https://github.com/user-attachments/assets/e87fd46b-cf13-4710-a0bf-6ee25de488f2" />
-<img width="1365" alt="Homepage View 3" src="https://github.com/user-attachments/assets/f9604b4b-712d-453c-ab74-abb3e3ba289a" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/2801d697-3ab7-4b01-97cc-01696fed2c58" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/39e84f93-a73e-48db-b0f5-d392b7791d3b" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/9337bf01-ee98-4d4b-99bb-c7a10668b944" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/381feeae-7e86-46f3-9857-3e6926e44503" />
 
 ### Main Dashboard
-<img width="1364" alt="Dashboard Interface 1" src="https://github.com/user-attachments/assets/85c57389-042f-493b-a443-db44bba39220" />
-<img width="1359" alt="Dashboard Interface 2" src="https://github.com/user-attachments/assets/f66252fb-8f63-433b-b14a-1c4dfcffb322" />
+<img width="1409" height="928" alt="image" src="https://github.com/user-attachments/assets/48fcbe27-7ad9-4366-91a7-51883e9dca85" />
 
 ### Create Expense
-<img width="1361" alt="Expense Creation 1" src="https://github.com/user-attachments/assets/31f35df5-345c-439a-95a4-8b82fb04aaf6" />
-<img width="1360" alt="Expense Creation 2" src="https://github.com/user-attachments/assets/0c25344f-ead5-44ca-8a90-c0bacb768f6f" />
+<img width="1026" height="919" alt="image" src="https://github.com/user-attachments/assets/04d4df89-2a5d-4db8-ac11-cb2bd8feabc4" />
+
 
 ### Group Administration
-<img width="1365" alt="Group Admin Panel 1" src="https://github.com/user-attachments/assets/41ffb2a3-e755-4895-8170-764e521ecc52" />
-<img width="1359" alt="Group Admin Panel 2" src="https://github.com/user-attachments/assets/d72bd991-532e-40cc-9b4d-0efed2e4d1ad" />
+<img width="1405" height="397" alt="image" src="https://github.com/user-attachments/assets/ea829775-64ab-45fd-afa8-9169a166aa5d" />
+
+<img width="1210" height="923" alt="image" src="https://github.com/user-attachments/assets/f436eaea-6d94-4c3b-8113-726fb0e4970c" />
+
 
 ### Payment Settlement
-<img width="1360" alt="Settlement Interface" src="https://github.com/user-attachments/assets/d7ddc3ba-d9ef-4baf-81bb-c07a6d165a71" />
+<img width="1210" height="747" alt="image" src="https://github.com/user-attachments/assets/0d4494fd-18d4-4ccf-9561-42c61e623393" />
 
 ### Email Notification System
 
