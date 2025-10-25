@@ -41,6 +41,62 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 
 
 
+🔑 Key Technical Decisions
+1. Real-time Data with Convex
+Why? Instant updates across all devices without manual refresh
+How? Convex provides reactive queries that update automatically
+2. Optimized Balance Calculations
+Implemented 4-step consistent calculation logic:
+
+Get all expenses where user is involved
+Calculate net balance per user from expenses
+Apply all settlements to adjust net balances
+Build UI lists and calculate global totals
+3. Smart Indexing
+Indexes on frequently queried fields
+Reduces query time from O(n) to O(log n)
+Critical for dashboard performance
+4. Background Jobs with Inngest
+Payment Reminders: Daily at 10 AM IST
+Spending Insights: Monthly on 1st at 10 AM IST
+Runs reliably without blocking main application
+📧 Email Notifications
+Gmail SMTP Setup
+Enable 2-Step Verification
+
+Go to Google Account Security
+Enable 2-Step Verification
+Generate App Password
+
+Go to App Passwords
+Create password for "Mail"
+Use this as GMAIL_APP_PASSWORD
+Configure in Convex
+
+Add GMAIL_USER and GMAIL_APP_PASSWORD to Convex environment variables
+🎓 Learning Outcomes
+This project demonstrates:
+
+✅ Full-stack development with modern React (Next.js 16)
+✅ Real-time backend architecture (Convex)
+✅ Authentication implementation (Clerk)
+✅ Background job scheduling (Inngest)
+✅ Email automation (Nodemailer)
+✅ Database design and indexing
+✅ Responsive UI design (Tailwind CSS + shadcn/ui)
+✅ Form validation (React Hook Form + Zod)
+✅ Error handling and user feedback
+✅ Deployment and production setup
+🙏 Acknowledgments
+Next.js - The React Framework
+Convex - Real-time backend platform
+Clerk - Authentication service
+Inngest - Background job orchestration
+shadcn/ui - Beautiful component library
+Radix UI - Accessible component primitives
+Tailwind CSS - Utility-first CSS framework
+
+
 
 
 
