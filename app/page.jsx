@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { ArrowRight, Star, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Star, CheckCircle2, Sparkle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ export default function LandingPage() {
         <div className="text-center space-y-6">
           <div className="relative">
             <div className="inline-block h-16 w-16 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600"></div>
-            <Sparkles className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 text-indigo-600 animate-pulse" />
+              <Sparkle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 text-indigo-600 animate-pulse" />
           </div>
           <p className="text-lg font-semibold text-muted-foreground animate-pulse">
             Loading your experience...
@@ -56,7 +56,7 @@ export default function LandingPage() {
               variant="outline" 
               className="bg-white/80 backdrop-blur-sm text-indigo-700 border-2 px-6 py-2 text-sm font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
-              <Sparkles className="h-4 w-4 inline mr-2" />
+              <Sparkle className="h-4 w-4 inline mr-2" />
               Split expenses. Simplify life.
             </Badge>
 
@@ -122,7 +122,7 @@ export default function LandingPage() {
                   src="/hero.png"
                   width={1280}
                   height={720}
-                  alt="Equinex Dashboard Preview"
+                  alt="Pikofy Dashboard Preview"
                   className="rounded-2xl w-full"
                   priority
                 />
@@ -296,8 +296,8 @@ export default function LandingPage() {
         
         <div className="container mx-auto px-4 md:px-6 text-center space-y-8 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-white/30">
-            <Sparkles className="h-5 w-5 text-white" />
-            <span className="text-white font-bold">Join 50,000+ happy users</span>
+              <Sparkle className="h-5 w-5 text-white" />
+              <span className="text-white font-bold">Join 50+ happy users</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
@@ -344,9 +344,9 @@ export default function LandingPage() {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-sm text-muted-foreground font-medium">
-              © {new Date().getFullYear()} Equinex. All rights reserved.
-            </p>
+              <p className="text-sm text-muted-foreground font-medium">
+              © {new Date().getFullYear()} Pikofy. All rights reserved.
+              </p>
             <div className="flex gap-6 text-sm font-medium text-muted-foreground">
               <Link href="#" className="hover:text-foreground transition-colors">
                 Privacy

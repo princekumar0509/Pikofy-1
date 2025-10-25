@@ -12,21 +12,21 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Equinex - Smart Expense Splitting",
+  title: "Pikofy - Smart Expense Splitting",
   description: "The smartest way to split expenses with friends. Track shared expenses, split bills effortlessly, and settle up quickly.",
   keywords: ["expense splitting", "bill splitting", "shared expenses", "group expenses", "expense tracker"],
-  authors: [{ name: "Equinex" }],
-  creator: "Equinex",
+  authors: [{ name: "Pikofy" }],
+  creator: "Pikofy",
   openGraph: {
-    title: "Equinex - Smart Expense Splitting",
+    title: "Pikofy - Smart Expense Splitting",
     description: "The smartest way to split expenses with friends",
     type: "website",
     locale: "en_US",
-    siteName: "Equinex",
+    siteName: "Pikofy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Equinex - Smart Expense Splitting",
+    title: "Pikofy - Smart Expense Splitting",
     description: "The smartest way to split expenses with friends",
   },
   icons: {
@@ -77,8 +77,8 @@ export default function RootLayout({ children }) {
             },
             elements: {
               // Root Card Styling
-              rootBox: 'w-full',
-              card: 'shadow-none border-0 bg-transparent',
+              rootBox: 'w-full max-w-md mx-auto',
+              card: 'shadow-xl border-2 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 rounded-2xl',
               
               // Header Styling
               headerTitle: 'text-3xl font-black text-foreground mb-2',
@@ -175,23 +175,28 @@ export default function RootLayout({ children }) {
           afterSignUpUrl="/dashboard"
         >
           <ConvexClientProvider>
-            <Header />
-            <main className="min-h-screen">
-              <Toaster 
-                richColors 
-                position="top-right"
-                expand={false}
-                duration={4000}
-                closeButton
-                toastOptions={{
-                  className: 'rounded-2xl border-2 shadow-xl backdrop-blur-xl font-semibold',
-                  style: {
-                    padding: '1rem 1.5rem',
-                  },
-                }}
-              />
-              {children}
-            </main>
+            <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-pink-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+              {/* Decorative elements */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-violet-300/20 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-300/20 rounded-full blur-3xl" />
+              </div>
+              
+              {/* Content */}
+              <div className="relative min-h-screen flex flex-col items-center justify-center p-4">
+                {/* Logo */}
+                <div className="w-full max-w-md mx-auto mb-6">
+                  <div className="flex justify-center">
+                    <img src="/logos/logo.png" alt="Pikofy" className="h-12 w-auto" />
+                  </div>
+                </div>
+                
+                {/* Auth Component */}
+                <div className="w-full max-w-md">
+                  {children}
+                </div>
+              </div>
+            </div>
           </ConvexClientProvider>
         </ClerkProvider>
       </body>
