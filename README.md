@@ -231,3 +231,17 @@ Let’s make expense sharing effortless ✨
 * Ensured Markdown renders cleanly on **GitHub and VS Code previews**.
 
 Would you like me to make a **minimal variant** (less flashy, more corporate-looking) version too — for professional submission or internship portfolios?
+
+
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/2801d697-3ab7-4b01-97cc-01696fed2c58" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/39e84f93-a73e-48db-b0f5-d392b7791d3b" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/9337bf01-ee98-4d4b-99bb-c7a10668b944" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/381feeae-7e86-46f3-9857-3e6926e44503" />
+<img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/d02c5c74-5955-48e5-8753-f8d45911307c" />
+<img width="1026" height="919" alt="image" src="https://github.com/user-attachments/assets/04d4df89-2a5d-4db8-ac11-cb2bd8feabc4" />
+
+
+
+
+
+
