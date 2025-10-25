@@ -1,5 +1,5 @@
 # 🚀 Pikofy: The Intelligent Expense Splitting Platform
-## Live Demo: https://pikofy-1.vercel.app
+## WEBSITE LINK: [link](https://pikofy-1.vercel.app)
 ## 📖 About The Project
  **Pikofy** is a **full-stack, real-time expense-sharing app** for the Indian market that simplifies bill splitting and group finances with instant updates and **smart settlement suggestions**.
 ## 🎯 Problem Statement: The Friction of Manual Expense Tracking
