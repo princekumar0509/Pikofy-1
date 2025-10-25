@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useAuth } from "@clerk/nextjs"; // ADDED THIS
 import { api } from "@/convex/_generated/api";
 import { useConvexQuery, useConvexMutation } from "@/hooks/use-convex-query";
 import { BarLoader } from "react-spinners";
@@ -24,20 +25,7 @@ import { formatCurrency } from "@/lib/currency";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
-  // Check if user should see welcome modal
-  const { data: shouldShowWelcome } = useConvexQuery(api.users.shouldShowWelcome);
-  const { mutate: markWelcomeSeen } = useConvexMutation(api.users.markWelcomeSeen);
-
-  // Derive showWelcome directly from query data (no useState/useEffect needed)
-  const showWelcome = shouldShowWelcome === true;
-
-  const handleCloseWelcome = async () => {
-    try {
-      await markWelcomeSeen();
-    } catch (error) {
-      console.error("Failed to mark welcome as seen:", error);
-    }
-  };
+  const { isLoaded, isSignedIn } = useAuth(); // ADDED THIS LINE
   
   // Show success message based on URL parameter
   useEffect(() => {
@@ -77,6 +65,53 @@ export default function Dashboard() {
       );
     }
   }, [searchParams]);
+
+  // ADDED THIS CHECK - Wait for Clerk to load before making Convex queries
+  if (!isLoaded) {
+    return (
+      <div className="container mx-auto py-12">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className="mt-4 text-muted-foreground">Loading...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return (
+      <div className="container mx-auto py-12">
+        <div className="text-center">
+          <p className="text-muted-foreground">Please sign in to continue</p>
+        </div>
+      </div>
+    );
+  }
+
+  // NOW it's safe to call Convex queries
+  return <DashboardContent />;
+}
+
+// Separate component for the actual dashboard content
+function DashboardContent() {
+  const searchParams = useSearchParams();
+  
+  // Check if user should see welcome modal
+  const { data: shouldShowWelcome } = useConvexQuery(api.users.shouldShowWelcome);
+  const { mutate: markWelcomeSeen } = useConvexMutation(api.users.markWelcomeSeen);
+
+  // Derive showWelcome directly from query data (no useState/useEffect needed)
+  const showWelcome = shouldShowWelcome === true;
+
+  const handleCloseWelcome = async () => {
+    try {
+      await markWelcomeSeen();
+    } catch (error) {
+      console.error("Failed to mark welcome as seen:", error);
+    }
+  };
 
   const { data: balances, isLoading: balancesLoading } = useConvexQuery(
     api.dashboard.getUserBalances
