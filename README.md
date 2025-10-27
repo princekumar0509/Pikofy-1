@@ -78,9 +78,9 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 ### Backend Administration Panels
 
 #### Convex Control Panel
-<img width="1366" alt="Convex Admin 1" src="https://github.com/user-attachments/assets/18c5b3f6-2ccb-4564-ac3f-e432c4d27d91" />
-<img width="1363" alt="Convex Admin 2" src="https://github.com/user-attachments/assets/ba0774fe-b044-413a-a988-34d29c291e55" />
-<img width="1361" alt="Convex Admin 3" src="https://github.com/user-attachments/assets/00e6d06b-6901-4f6e-9bf7-ebec011369e2" />
+<img width="1912" height="923" alt="image" src="https://github.com/user-attachments/assets/3fa4463f-02db-4f7b-80fa-f4a01d14e3a9" />
+<img width="1912" height="923" alt="image" src="https://github.com/user-attachments/assets/db2b9492-212a-4163-bfa3-1e0d9c6a3d21" />
+<img width="1912" height="923" alt="image" src="https://github.com/user-attachments/assets/b76f0ae9-44f2-4db9-8f93-17ea430eb0c4" />
 
 #### Inngest Job Monitor
 <img width="1361" alt="Inngest Control Panel" src="https://github.com/user-attachments/assets/7d1c6f73-74bd-4c87-9814-2093ff02b391" />
