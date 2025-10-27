@@ -73,7 +73,7 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 <img width="1920" height="927" alt="image" src="https://github.com/user-attachments/assets/8d41e68a-6859-4770-b7e6-be2eb8c9c699" />
 
 #### Group Membership Invitation
-<img width="1365" alt="Invitation Email" src="https://github.com/user-attachments/assets/fcd6f107-937b-4ff8-97df-037db41d8da6" />
+<img width="1912" height="920" alt="image" src="https://github.com/user-attachments/assets/f90afe6c-651b-4296-be85-6709f64ec98e" />
 
 ### Backend Administration Panels
 
