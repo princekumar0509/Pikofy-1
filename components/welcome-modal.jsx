@@ -32,7 +32,7 @@ export function WelcomeModal({ open, onClose }) {
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[550px] p-0 gap-0 overflow-hidden border-0">
         <VisuallyHidden>
-          <DialogTitle>Welcome to Equinex</DialogTitle>
+          <DialogTitle>Welcome to Pikofy</DialogTitle>
         </VisuallyHidden>
         {/* Header with gradient background */}
         <div className="relative bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 px-6 pt-8 pb-12 text-white">
@@ -48,7 +48,7 @@ export function WelcomeModal({ open, onClose }) {
               <Sparkles className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-2">Welcome to Equinex!</h2>
+              <h2 className="text-3xl font-bold mb-2">Welcome to Pikofy!</h2>
               <p className="text-blue-100 text-lg">
                 Start splitting expenses the smart way
               </p>
