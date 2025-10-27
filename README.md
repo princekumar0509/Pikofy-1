@@ -83,7 +83,7 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 <img width="1912" height="923" alt="image" src="https://github.com/user-attachments/assets/b76f0ae9-44f2-4db9-8f93-17ea430eb0c4" />
 
 #### Inngest Job Monitor
-<img width="1361" alt="Inngest Control Panel" src="https://github.com/user-attachments/assets/7d1c6f73-74bd-4c87-9814-2093ff02b391" />
+<img width="1912" height="924" alt="image" src="https://github.com/user-attachments/assets/20cddfed-ded7-45e9-81d1-037e4a553700" />
 
 
 
