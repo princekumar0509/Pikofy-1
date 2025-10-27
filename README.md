@@ -46,6 +46,10 @@ Pikofy is built on a high-performance stack for real-time data and reliability:
 <img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/9337bf01-ee98-4d4b-99bb-c7a10668b944" />
 <img width="1906" height="920" alt="image" src="https://github.com/user-attachments/assets/381feeae-7e86-46f3-9857-3e6926e44503" />
 
+### Welcome page for new user
+<img width="1912" height="924" alt="image" src="https://github.com/user-attachments/assets/1d950aad-7b87-4a11-b8e3-4dbd730e6c91" />
+
+
 ### Main Dashboard
 <img width="1409" height="928" alt="image" src="https://github.com/user-attachments/assets/48fcbe27-7ad9-4366-91a7-51883e9dca85" />
 
